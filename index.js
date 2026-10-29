@@ -6,6 +6,7 @@ const config = require('./config')
 
 const plugins = new Map()
 
+// 📂 Plugins Loader
 const loadPlugins = () => {
     const pluginFolder = path.join(__dirname, 'plugins')
     if (!fs.existsSync(pluginFolder)) fs.mkdirSync(pluginFolder)
@@ -28,13 +29,31 @@ loadPlugins()
 
 async function startBot() {
     const { state, saveCreds } = await useMultiFileAuthState('auth_info')
+    
     const sock = makeWASocket({
-        printQRInTerminal: true,
+        printQRInTerminal: false, // QR off kar diya hai
         auth: state,
-        logger: P({ level: 'silent' })
+        logger: P({ level: 'silent' }),
+        browser: ['HaSSaN BrOvHi MD', 'Safari', '1.0.0']
     })
 
     sock.ev.on('creds.update', saveCreds)
+
+    // 🔑 PAIRING CODE LOGIC
+    if (!sock.authState.creds.registered) {
+        setTimeout(async () => {
+            try {
+                const phoneNumber = config.ownerNumber.replace(/[^0-9]/g, '')
+                const code = await sock.requestPairingCode(phoneNumber)
+                console.log(`\n=================================`)
+                console.log(`🔑 AAPKA PAIRING CODE: ${code}`)
+                console.log(`=================================\n`)
+                console.log(`WhatsApp mein: Settings > Linked Devices > Link with phone number`)
+            } catch (error) {
+                console.log('Pairing Code Error:', error)
+            }
+        }, 3000)
+    }
 
     sock.ev.on('connection.update', (update) => {
         const { connection, lastDisconnect } = update
@@ -42,10 +61,11 @@ async function startBot() {
             const shouldReconnect = lastDisconnect.error?.output?.statusCode !== DisconnectReason.loggedOut
             if (shouldReconnect) startBot()
         } else if (connection === 'open') {
-            console.log(`\n👑 ${config.botName} is Online!\n`)
+            console.log(`\n👑 ${config.botName} is Online & Connected!\n`)
         }
     })
 
+    // 📩 Message Handler
     sock.ev.on('messages.upsert', async (m) => {
         const msg = m.messages[0]
         if (!msg.message || msg.key.fromMe) return
