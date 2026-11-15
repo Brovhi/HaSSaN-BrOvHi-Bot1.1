@@ -10,18 +10,18 @@
 
 ℹ️ About HaSSaN BrOvHi MD BoT 1.1
 
-HaSSaN BrOvHi MD BoT 1.1 is a versatile Multi-Device WhatsApp bot built by "HaSSaN BrOvHi" (https://github.com/Brovhi/HaSSaN-BrOvHi-Bot1.1). founded by HaSSaN BrOvHi  It offers a wide range of features, making it an advanced and user-friendly bot for various purposes.
+HaSSaN BrOvHi MD BoT 1.1 is a versatile Multi-Device WhatsApp bot built by "HaSSaN BrOvHi" (https://github.com/Brovhi/HaSSaN-BrOvHi-Bot1.1). founded by HaSSaN BrOvHi. It offers a wide range of features, making it an advanced and user-friendly bot for various purposes.
 
 Bot Statistics
 
-"Bot Repository Size" (https://img.shields.io/github/repo-size/salmanytofficial/XLICON-V2-MD?style=for-the-badge)
-"Bot Repository Issues" (https://img.shields.io/github/issues/salmanytofficial/XLICON-V2-MD?style=for-the-badge)
-"Bot Repository Stars" (https://img.shields.io/github/stars/salmanytofficial/XLICON-V2-MD?style=for-the-badge)
-"Bot Repository Forks" (https://img.shields.io/github/forks/salmanytofficial/XLICON-V2-MD?style=for-the-badge)
-"Bot Repository Watchers" (https://img.shields.io/github/watchers/salmanytofficial/XLICON-V2-MD?label=Watchers&style=for-the-badge)
-"Bot Repository Contributors" (https://img.shields.io/github/contributors/salmanytofficial/XLICON-V2-MD?style=for-the-badge)
-"Bot Repository Pull Requests" (https://img.shields.io/github/issues-pr/salmanytofficial/XLICON-V2-MD?style=for-the-badge)
-"Bot Repository License" (https://img.shields.io/github/license/salmanytofficial/XLICON-V2-MD?style=for-the-badge)
+"Bot Repository Size" (https://img.shields.io/github/repo-size/Brovhi/HaSSaN-BrOvHi-Bot1.1?style=for-the-badge)
+"Bot Repository Issues" (https://img.shields.io/github/issues/Brovhi/HaSSaN-BrOvHi-Bot1.1?style=for-the-badge)
+"Bot Repository Stars" (https://img.shields.io/github/stars/Brovhi/HaSSaN-BrOvHi-Bot1.1?style=for-the-badge)
+"Bot Repository Forks" (https://img.shields.io/github/forks/Brovhi/HaSSaN-BrOvHi-Bot1.1?style=for-the-badge)
+"Bot Repository Watchers" (https://img.shields.io/github/watchers/Brovhi/HaSSaN-BrOvHi-Bot1.1?label=Watchers&style=for-the-badge)
+"Bot Repository Contributors" (https://img.shields.io/github/contributors/Brovhi/HaSSaN-BrOvHi-Bot1.1?style=for-the-badge)
+"Bot Repository Pull Requests" (https://img.shields.io/github/issues-pr/Brovhi/HaSSaN-BrOvHi-Bot1.1?style=for-the-badge)
+"Bot Repository License" (https://img.shields.io/github/license/Brovhi/HaSSaN-BrOvHi-Bot1.1?style=for-the-badge)
 
 HaSSaN BrOvHi MD BoT 1.1 - A Advanced Multi Device whatsapp bot*
 
@@ -41,7 +41,7 @@ FEATURES UPDATING
 
 1. Fork the repo
    <br>
-   <a href='https://github.com/ahmmikun/XLICON-V2-MD/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=black&labelColor=white&color=white'/></a>
+   <a href='https://github.com/Brovhi/HaSSaN-BrOvHi-Bot1.1/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=black&labelColor=white&color=white'/></a>
    <br>
 2. Get Session ID
    <br>
@@ -84,17 +84,16 @@ HaSSaN BrOvHi MD BoT 1.1 - By "HaSSaN BrOvHi"
 
 "Main Dev"
 
-<a href="https://github.com/abrahamdw882"><img src="https://avatars.githubusercontent.com/u/120536940?v=4" width="250" height="250" alt="Abraham Dwamena"/></a>
+<a href="https://github.com/Brovhi"><img src="https://i.ibb.co/s9RGhV4j/6a46ba9690b9.jpg" width="250" height="250" alt="HaSSaN BrOvHi"/></a>
 
-HaSSaN BrOvHi MD BoT 1.1 - By "BrOvHi🇵🇰"
+HaSSaN BrOvHi MD BoT 1.1 - By "HaSSaN BrOvHi"
 <br>
 "Development , Features Enhancement , Plugin Debbuging"
 
 🌈 "Support Us"
 
 - Mail Us:
-  1. "brovhi@gmail.com" (mailto: brovhi@gmail.com)
-  2. "brovhi@gmail.com" (mailto: Brovhi@gmail.com)
+  1. "eliumhassan@gmail.com" (mailto:eliumhassan@gmail.com)
      <br>
 - Join Our Support Group:
   <br>
