@@ -1,6 +1,6 @@
 module.exports = {
     name: 'style',
-    description: 'XLICON V2 text styler',
+    description: 'HASSAN 1.1 text styler',
     aliases: ['font', 'textstyle', 'styler'],
     tags: ['main'],
 
@@ -49,11 +49,11 @@ module.exports = {
 
             if (!q) {
                 const preview = Object.entries(styles)
-                    .map(([num, style]) => `${num}. ${convert('XLICON V2', style)}`)
+                    .map(([num, style]) => `${num}. ${convert('HASSAN 1.1', style)}`)
                     .join('\n');
 
                 return await sock.sendMessage(m.from, {
-                    text: `*XLICON V2 TEXT STYLER*\n\nExample:\n.style 1,XLICON V2\n\n${preview}`
+                    text: `*HASSAN 1.1 TEXT STYLER*\n\nExample:\n.style 1,HASSAN 1.1\n\n${preview}`
                 });
             }
 
@@ -79,7 +79,7 @@ module.exports = {
             });
 
         } catch (err) {
-            console.error('XLICON V2 Style Error:', err);
+            console.error('HASSAN 1.1 Style Error:', err);
 
             await sock.sendMessage(m.from, {
                 text: `Error: ${err.message || 'Failed to style text.'}`
