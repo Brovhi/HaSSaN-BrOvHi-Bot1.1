@@ -1,5 +1,10 @@
 const axios = require('axios');
 
+// 👇 Aapki Nayi Picture
+const OWNER_NAME = '👑 HaSSaN BrOvHi 👑';
+const BOT_NAME = 'HaSSaN BrOvHi Bot1.1';
+const USER_PIC = 'https://i.ibb.co/s9RGhV4j/6a46ba9690b9.jpg'; 
+
 module.exports = {
     name: 'guide',
     description: 'Show complete bot guide with all features and usage',
@@ -8,11 +13,12 @@ module.exports = {
     command: /^\.?(guide|help|tutorial|howto)$/i,
 
     async execute(sock, m, args) {
-        await m.react('📖');
-        const prefix = global.BOT_PREFIX || '.';
+        try {
+            await m.react('📖');
+            const prefix = global.BOT_PREFIX || '.';
 
-        const guideText = `
-┌─ム *XLICON V2 ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ ɢᴜɪᴅᴇ*
+            const guideText = `
+┌─ム *${BOT_NAME} ɢᴜɪᴅᴇ*
 ╰──────────────────╯
 
 👋 *Welcome!* This bot can do a lot!
@@ -66,7 +72,6 @@ Below is everything you need to know.
 > *Image → Sticker*
   ${prefix}sticker
   → Reply to an image with this command
-  Custom pack/author: ${prefix}sticker PackName | Author
 
 > *OCR (Read text from image)*
   ${prefix}ocr
@@ -81,7 +86,7 @@ Below is everything you need to know.
   Styles: neon, glitter, fire, shadow, gradient,
   dropwater, cloud, pixel, underwater, summer,
   thunder, pencil, leaves
-  Example: ${prefix}textpro neon | XLICON
+  Example: ${prefix}textpro neon | HaSSaN
 
 > *Music Identification*
   ${prefix}shazam
@@ -118,20 +123,8 @@ Below is everything you need to know.
 🌸 *ANIME*
 ━━━━━━━━━━━━━━━━━━━━━━
 > *Random Anime Images*
-  ${prefix}waifu
-  → Sends a random anime waifu image
-
-  ${prefix}neko
-  → Sends a random anime neko (catgirl) image
-
-  ${prefix}kitsune
-  → Sends a random anime kitsune (fox) image
-
-  ${prefix}husbando
-  → Sends a random anime husbando image
-
-  ${prefix}couplepp
-  → Random anime couple profile pictures
+  ${prefix}waifu, ${prefix}neko, ${prefix}kitsune, ${prefix}husbando, ${prefix}couplepp
+  → Sends random anime images
 
 ━━━━━━━━━━━━━━━━━━━━━━
 🎮 *FUN & SEARCH*
@@ -150,13 +143,13 @@ Below is everything you need to know.
 ━━━━━━━━━━━━━━━━━━━━━━
 > *Tagging*
   ${prefix}tagme — Tag yourself
-  ${prefix}tagall / ${prefix}tagall1 — Tag everyone in the group
+  ${prefix}tagall — Tag everyone
 
 > *Management*
-  ${prefix}group — Open/close group settings
-  ${prefix}ginfo <invite link> — Get group info
-  ${prefix}antigst — Anti-group link/sticker protection
-  ${prefix}kick / ${prefix}promote / ${prefix}demote — Admin actions
+  ${prefix}group — Open/close group
+  ${prefix}ginfo — Get group info
+  ${prefix}antigst — Anti-link protection
+  ${prefix}kick / ${prefix}promote / ${prefix}demote
 
 ━━━━━━━━━━━━━━━━━━━━━━
 📊 *STATUS & CHANNEL*
@@ -179,25 +172,27 @@ Below is everything you need to know.
 • Most commands work by *replying* to a message
 • Downloaders accept both *URLs* and *search queries*
 • Use ${prefix}play for the best YouTube experience
-  (lets you choose MP3 or MP4)
-• AI commands are available to everyone
-• Self mode restricts bot to owner only
 
-> 「 𝙏𝙞𝙢𝙚 - 𝙏𝙞𝙢𝙚𝙡𝙚𝙨𝙨 」
+> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ${OWNER_NAME}
 `.trim();
 
-        try {
-            const imageBuffer = (await axios.get(global.menuImage, {
-                responseType: 'arraybuffer'
-            })).data;
+            try {
+                const imageBuffer = (await axios.get(USER_PIC, {
+                    responseType: 'arraybuffer'
+                })).data;
 
-            await m.reply(imageBuffer, {
-                caption: guideText
-            });
+                await sock.sendMessage(m.chat || m.from, {
+                    image: imageBuffer,
+                    caption: guideText
+                }, { quoted: m });
+
+            } catch (err) {
+                console.error('Guide image error:', err);
+                await m.reply(guideText);
+            }
 
         } catch (err) {
-            console.error('Guide error:', err);
-            await m.reply(guideText);
+            console.error('Guide command error:', err);
         }
     }
 };
