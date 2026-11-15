@@ -79,7 +79,8 @@ module.exports = {
 
 ᴛɪᴛʟᴇ: ${title}
 
-ᴅᴏᴡɴʟᴏᴀᴅᴇᴅ ʙʏ XLICON V2`;
+𝑫𝑶𝑾𝑵𝑳𝑶𝑨𝑫𝑬𝑫 𝑩𝒀 𝑯𝒂𝑺𝑺𝒂𝑵 𝑩𝒓𝑶𝒗𝑯𝒊
+`;
 
             await m.reply({
                 video: videoBuffer,
