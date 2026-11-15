@@ -52,7 +52,7 @@ module.exports = {
       await sendInteractiveMessage(sock, m.from, {
         title: 'OCR RESULT',
         text: safeText,
-        footer: 'XLICON v2 - Aʙᴢᴛᴇᴄʜ 🇬🇭',
+        footer: 'Hassan MD v1.1 - Hassan🇵🇰',
         interactiveButtons: [
           {
             name: 'cta_copy',
