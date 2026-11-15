@@ -8,7 +8,7 @@
   
 
 ## 🌟 `Bot Intro and Features`
-[![HaSSaN BrOvHi](https://i.ibb.co/5xRGprW0/IMG-20260907-WA0020-2.jpg)](https://wa.me/923373730931)
+[![HaSSaN BrOvHi](https://i.ibb.co/s9RGhV4j/6a46ba9690b9.jpg)](https://wa.me/923373730931)
 
 ### ℹ️ **About HaSSaN-BrOvHi-Bot1.1**
 HaSSaN-BrOvHi-Bot1.1 is a versatile Multi-Device WhatsApp bot built and maintained by **HaSSaN BrOvHi**. It offers a wide range of features, making it an advanced and user-friendly bot for various purposes.
