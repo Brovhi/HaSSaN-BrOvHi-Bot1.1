@@ -1,14 +1,18 @@
+const OWNER_NAME = '👑 HaSSaN BrOvHi 👑';
+const BOT_NAME = 'HaSSaN BrOvHi MD';
+
 module.exports = {
   name: 'profilepic',
-  description: 'Get profile picture',
+  description: `Get profile picture — By ${OWNER_NAME}`,
   aliases: ['pp', 'dp'],
   tags: ['tools'],
   command: /^\.?(profilepic|pp|dp)/i,
 
   async execute(sock, m) {
     try {
-      await m.react('🖼️');
-
+      try { await m.react('🖼️'); } catch (e) {}
+      
+      const chatId = m.chat || m.from || (m.key && m.key.remoteJid);
       const jid = m.quoted?.key?.participant || m.sender;
 
       let ppUrl;
@@ -20,7 +24,7 @@ module.exports = {
 
       const quotedMsg = m.quoted || {
         key: {
-          remoteJid: m.from,
+          remoteJid: chatId,
           fromMe: false,
           id: m.id,
           participant: m.sender
@@ -33,14 +37,15 @@ module.exports = {
       };
 
       await sock.sendMessage(
-        m.from,
+        chatId,
         {
           image: { url: ppUrl },
-          caption: 'Profile picture',
+          caption: `📸 *Profile Picture*\n\n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ${OWNER_NAME}`,
           contextInfo: {
+            // 👇 Purana ABZTECH channel hata kar aapki details
             forwardedNewsletterMessageInfo: {
-              newsletterJid: '120363230794474148@newsletter',
-              newsletterName: '𝘈𝘉-𝘡𝘛𝘌𝘊𝘏🇬🇭「 𝙏𝙞𝙢𝙚 - 𝙏𝙞𝙢𝙚𝙡𝙚𝙨𝙨 」'
+              newsletterJid: ' https://wa.me/923373730931',
+              newsletterName: BOT_NAME
             },
             isForwarded: true
           }
@@ -49,7 +54,7 @@ module.exports = {
       );
     } catch (err) {
       console.error('Profile pic error:', err);
-      await m.reply('Failed to fetch profile picture.');
+      await m.reply(`❌ Failed to fetch profile picture.\n\n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ${OWNER_NAME}`);
     }
   }
 };
