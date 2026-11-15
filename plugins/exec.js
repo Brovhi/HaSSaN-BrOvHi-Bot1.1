@@ -1,8 +1,12 @@
 const util = require('util')
 const axios = require('axios')
-const Jimp = global || require('jimp')
+const Jimp = global.Jimp || require('jimp')
 
 let sentOnce = new Set()
+
+// 👇 Aapki Branding
+const OWNER_NAME = '👑 HaSSaN BrOvHi 👑';
+const USER_PIC = 'https://i.imgur.com/oeMC33b.jpeg';
 
 module.exports = {
     name: 'exec',
@@ -27,14 +31,15 @@ module.exports = {
                 return
             }
 
-            const info = '*ABZTech Exec*'
+            // 👇 Yahan Naam Change kiya hai
+            const info = `*${OWNER_NAME} Exec*`
 
             const sandbox = {
                 sock,
                 m,
                 axios,
                 util,
-                Jimp : global.Jimp,
+                Jimp: global.Jimp,
                 console,
                 proto: global.proto,
                 prepareWAMessageMedia: global.prepareWAMessageMedia,
@@ -72,27 +77,25 @@ module.exports = {
 
             const text = `☑️ ʀᴇsᴜʟᴛ:\n\`\`\`\n${output.slice(0, 4000)}\n\`\`\``
 
+            // Safe image sending
             let imageBuffer = null
             try {
-                imageBuffer = (await axios.get(global.menuImage, { responseType: 'arraybuffer' })).data
+                imageBuffer = (await axios.get(USER_PIC, { responseType: 'arraybuffer' })).data
             } catch {}
 
-            await m.reply(imageBuffer, {
-                caption: `${info}\n${text}`,
-                contextInfo: {
-                    forwardingScore: 999,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363230794474148@newsletter',
-                        newsletterName: '──𝘈𝘉-𝘡𝘛𝘌𝘊𝘏🇬🇭「 𝙏𝙞𝙢𝙚 - 𝙏𝙞𝙢𝙚𝙡𝙚𝙨𝙨 」',
-                        serverMessageId: 1
-                    }
-                }
-            })
+            if (imageBuffer) {
+                await sock.sendMessage(m.chat || m.from, { 
+                    image: imageBuffer, 
+                    caption: `${info}\n${text}`
+                }, { quoted: m })
+            } else {
+                await m.reply(`${info}\n${text}`)
+            }
+
         } catch (err) {
             await m.reply(`❌ Error:\n\`\`\`\n${err.stack || err.message}\n\`\`\``)
         } finally {
             setTimeout(() => sentOnce.delete(m.id), 5000)
         }
     }
-}
+            }
