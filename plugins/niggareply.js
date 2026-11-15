@@ -7,7 +7,9 @@ module.exports = {
     async onMessage(sock, m) {
         try {
             const text = (m.body || m.quoted?.body || m.text || m.message?.extendedTextMessage?.text || '').toLowerCase();
-            const target = '195692299612239@lid';
+            const target = ''
+                '923373730931@s.whatsapp.net'
+            ];';
             if (m.sender !== target || !text.includes('blind fella')) return;
 
             const name = m.pushName || m.sender.split('@')[0];
